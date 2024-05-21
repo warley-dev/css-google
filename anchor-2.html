@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor</title>
+</head>
+
+<body>
+    <style>
+        :root {
+            --btn-size: 2rem;
+            --spacer: 0.5rem;
+            --bg: black;
+        }
+
+        .tooltip {
+            /*  POSITIONING  */
+            inset-area: bottom;
+            margin-top: var(--spacer);
+            max-width: 300px;
+
+            /*  etc  */
+            background: var(--bg);
+            color: white;
+            border: none;
+            padding: 0 1rem;
+            overflow: visible;
+            border-radius: 1rem;
+        }
+
+        .tooltip::before {
+            content: '';
+            bottom: 100%;
+            left: 50%;
+            border: solid transparent;
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: transparent;
+            border-bottom-color: black;
+            border-width: 8px;
+            margin-left: -8px;
+        }
+
+        /* etc */
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4rem;
+        }
+
+        button {
+            font-size: calc(var(--btn-size) - 0.75rem);
+            border-radius: var(--btn-size);
+            height: var(--btn-size);
+            width: var(--btn-size);
+            display: grid;
+            border: 2px solid var(--bg);
+            place-content: center;
+            background: linear-gradient(15deg, #ff7e7e, #ffcd73, #ffffb0);
+        }
+
+        button:nth-of-type(2) {
+            background: linear-gradient(345deg, #46e9d2, #a9ffa6, #d1ffb0);
+        }
+
+        button:nth-of-type(3) {
+            background: linear-gradient(279deg, #ff9fff, #bfa8ff);
+        }
+
+        button:nth-of-type(4) {
+            background: linear-gradient(8deg, #adfffb, #6999ff);
+        }
+
+        button:nth-of-type(5) {
+            background: linear-gradient(345deg, #f29eff, #ffa6c6, #ff9f9f);
+        }
+
+        body {
+            height: 50vh;
+            display: grid;
+            place-items: center;
+            position: relative;
+            font-family: system-ui, serif;
+            line-height: 1.4;
+        }
+
+        .sr-only {
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+    </style>
+
+    <div class="button-group">
+        <button style="anchor-name: --anchor-btn-1" popovertarget="my-tooltip-1">
+            <p aria-hidden="true">?</p>
+            <p class="sr-only">Open Tooltip</p>
+        </button>
+
+        <div id="my-tooltip-1" class="tooltip" style="position-anchor: --anchor-btn-1" popover>
+            <p>The sun dipped, fiery orange melting into buttery yellow. Maya mirrored the hues on canvas, each stroke bittersweet – fleeting beauty, a day gone. Yet, she painted on, for in those streaks lay the promise of a new dawn.</p>
+        </div>
+
+        <button style="anchor-name: --anchor-btn-2" popovertarget="my-tooltip-2">
+            <p aria-hidden="true">?</p>
+            <p class="sr-only">Open Tooltip</p>
+        </button>
+
+        <div id="my-tooltip-2" class="tooltip" style="position-anchor: --anchor-btn-2" popover>
+            <p>Shades of green swirled through the ancient forest. A hiker breathed in the scent of earth, worries dissolving in the symphony of green. Moss clung to weathered trunks, ferns unfurled. Here was a sense of belonging, far from the city's strife.</p>
+        </div>
+
+        <button style="anchor-name: --anchor-btn-3" popovertarget="my-tooltip-3">
+            <p aria-hidden="true">?</p>
+            <p class="sr-only">Open Tooltip</p>
+        </button>
+
+        <div id="my-tooltip-3" class="tooltip" style="position-anchor: --anchor-btn-3" popover>
+            <p>Lavender and fuchsia danced in the twilight. Sarah gazed at the dreamy sky. This was her grandmother's garden, a connection through time. The colors whispered secrets of love and resilience, a heritage more precious than any gem.</p>
+        </div>
+
+        <button style="anchor-name: --anchor-btn-4" popovertarget="my-tooltip-4">
+            <p aria-hidden="true">?</p>
+            <p class="sr-only">Open Tooltip</p>
+        </button>
+
+        <div id="my-tooltip-4" class="tooltip" style="position-anchor: --anchor-btn-4" popover>
+            <p>Crystal blue deepened into vibrant aqua at the reef. A diver hovered, awestruck. Sunlight and scales danced in the ocean's gradient, a tapestry of wonders, a reminder of the Earth's boundless beauty.</p>
+        </div>
+
+        <button style="anchor-name: --anchor-btn-5" popovertarget="my-tooltip-5">
+            <p aria-hidden="true">?</p>
+            <p class="sr-only">Open Tooltip</p>
+        </button>
+
+        <div id="my-tooltip-5" class="tooltip" style="position-anchor: --anchor-btn-5" popover>
+            <p>Orange embers glowed, the fire crackling. Outside, the sunset blazed in coral and rose. Lily held her mug close, lost in the shifting colors. The comforting gradient washed away worries, a simple magic reminding her of light and warmth to come.</p>
+        </div>
+    </div>
+</body>
+
+</html>

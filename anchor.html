@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor</title>
+</head>
+
+<body>
+    <style>
+        button {
+            anchor-name: --question-mark;
+        }
+
+        #my-tooltip {
+            position-anchor: --question-mark;
+            inset-area: top;
+            position-try-options: flip-block;
+        }
+
+        /* etc. */
+
+        button {
+            background: #ddd;
+            font-size: 1rem;
+            font-weight: 800;
+            font-family: monospace;
+            border-radius: 100%;
+            aspect-ratio: 1/1;
+            width: 1.5rem;
+            line-height: 0;
+            border: 2px solid black;
+            margin-top: 40dvh;
+        }
+
+        .tooltip {
+            font-family: system-ui, sans-serif;
+            background: #333;
+            color: white;
+            font-weight: 400;
+            padding: 1rem;
+            max-width: 200px;
+            line-height: 1.5;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: 1fr;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+
+    <!-- <a href="https://developer.chrome.com/blog/anchor-positioning-api?hl=pt-br" target="_blank">Link</a> -->
+
+    <button popovertarget="my-tooltip">
+        <p>?</p>
+    </button>
+
+    <div id="my-tooltip" class="tooltip" popover>
+        <p>I am a tooltip with more information. I am a tooltip with more information. I am a tooltip with more information. I am a tooltip with more information.
+        <p>
+    </div>
+</body>
+
+</html>

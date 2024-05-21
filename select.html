@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+<body>
+    <style>
+        selectedoption .text {
+            /* display: none; */
+        }
+
+        datalist img {
+            width: 40px;
+            height: 40px;
+        }
+
+        section {
+            option {
+                color: brown !important;
+            }
+        }
+    </style>
+
+    <select>
+        <button type="popover">
+            <selectedoption></selectedoption>
+        </button>
+
+        <datalist>
+            <option value="" hidden>
+                <p>Selecione ...</p>
+            </option>
+
+            <option value="1">
+                <img src="https://yt3.ggpht.com/iUQqZPVMfTDE0ByCGHMQHRnUpJTOkOuyyD8P0wu3sDCx7EPenAKmNueijl3Y13zogxT902NVCg=s88-c-k-c0x00ffffff-no-rj">
+                <p>Option um</p>
+            </option>
+
+            <hr>
+
+            <option value="2">
+                <img src="https://yt3.ggpht.com/iUQqZPVMfTDE0ByCGHMQHRnUpJTOkOuyyD8P0wu3sDCx7EPenAKmNueijl3Y13zogxT902NVCg=s88-c-k-c0x00ffffff-no-rj">
+                <p>Option dois</p>
+            </option>
+
+            <optgroup label="options group">
+                <option value="group-1">
+                    <img src="https://yt3.ggpht.com/iUQqZPVMfTDE0ByCGHMQHRnUpJTOkOuyyD8P0wu3sDCx7EPenAKmNueijl3Y13zogxT902NVCg=s88-c-k-c0x00ffffff-no-rj">
+                    <p>Group um</p>
+                </option>
+
+                <option value="group-2">
+                    <img src="https://yt3.ggpht.com/iUQqZPVMfTDE0ByCGHMQHRnUpJTOkOuyyD8P0wu3sDCx7EPenAKmNueijl3Y13zogxT902NVCg=s88-c-k-c0x00ffffff-no-rj">
+                    <p>Group dois</p>
+                </option>
+
+            </optgroup>
+        </datalist>
+    </select>
+
+    <!-- <img src="https://yt3.ggpht.com/iUQqZPVMfTDE0ByCGHMQHRnUpJTOkOuyyD8P0wu3sDCx7EPenAKmNueijl3Y13zogxT902NVCg=s88-c-k-c0x00ffffff-no-rj" alt=""> -->
+</body>
+</html>
