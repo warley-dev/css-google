@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animating Text if Larger Than Parent Div</title>
+
+    <style>
+        .container {
+            width: 200px;
+            /* largura da div container */
+            overflow: hidden;
+            /* para esconder o texto que ultrapassa a largura da div container */
+        }
+
+        .text-container {
+            white-space: nowrap;
+            /* impede que o texto quebre para uma nova linha */
+        }
+
+        .animated {
+            animation: slideText 5s linear infinite;
+            /* animação para mover o texto lateralmente */
+        }
+
+        @keyframes slideText {
+            0% {
+                transform: translateX(100%);
+                /* move o texto completamente para a direita */
+            }
+
+            100% {
+                transform: translateX(-100%);
+                /* move o texto completamente para a esquerda */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-container">
+            <span class="text">Seu texto aqui Seu texto aqui Seu texto aqui Seu texto aqui Seu texto aqui</span>
+        </div>
+    </div>
+
+    <script>
+        // Verifica se o texto quebra para uma nova linha
+        window.onload = function () {
+            var container = document.querySelector('.container');
+            var textContainer = document.querySelector('.text-container');
+            var text = document.querySelector('.text');
+
+            if (text.offsetHeight > container.offsetHeight) {
+                textContainer.classList.add('animated');
+            }
+        }
+    </script>
+</body>
+
+</html>
